@@ -31,9 +31,3 @@ def plot_line(df, x, y, title, xlabel, ylabel):
     >>> df = pd.DataFrame({'year': [2020, 2021, 2022], 'sales': [100, 150, 200]})
     >>> fig, ax = plot_line(df, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
     """
-    fig, ax = plt.subplots()
-    ax.plot(df[x], df[y])
-    ax.set_title(title)
-    ax.set_xlabel(xlabel)
-    ax.set_ylabel(ylabel)
-    return fig, ax
