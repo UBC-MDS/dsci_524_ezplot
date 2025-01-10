@@ -15,49 +15,95 @@ If you are reporting a bug, please include:
 
 ### Fix Bugs
 
-Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
-wanted" is open to whoever wants to implement it.
+Look through the [GitHub Issues](https://github.com/UBC-MDS/dsci_524_ezplot/issues) for bugs. Anything tagged with `bug` and `help wanted` is open for contributions.
+
+To fix a bug:
+* Create a branch named `bugfix/<description>` to address the issue.
+* Link the issue to your branch and pull request for traceability.
+* Open a pull request following the [Pull Request Guidelines](#pull-request-guidelines).
 
 ### Implement Features
 
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
+Follow the **GitHub Flow** collaboration strategy:
+
+* Create a new branch for your feature using a descriptive name, e.g., `feature/scatter-plot`.
+* Commit changes incrementally with clear, meaningful messages.
+* Open a pull request and link it to the corresponding issue.
+* Request a review from another contributor before merging.
 
 ### Write Documentation
 
-You can never have enough documentation! Please feel free to contribute to any
-part of the documentation, such as the official docs, docstrings, or even
-on the web in blog posts, articles, and such.
+Contribute to any part of the documentation, including:
+* Docstrings in the code.
+* Project documentation in the `docs` directory.
+* Examples in Jupyter notebooks or blog posts.
+
+To contribute documentation:
+* Create a branch for your changes, e.g., `docs/<description>`.
+* Ensure your documentation is clear and adheres to our style guide (if applicable).
+* Open a pull request for review.
 
 ### Submit Feedback
 
-If you are proposing a feature:
+We welcome feedback and suggestions for new features! 
+* Submit feedback by creating a [GitHub Issue](https://github.com/UBC-MDS/dsci_524_ezplot/issues).
+* Label your issue as `feature-request` or `feedback` to help us prioritize.
 
-* Explain in detail how it would work.
-* Keep the scope as narrow as possible, to make it easier to implement.
-* Remember that this is a volunteer-driven project, and that contributions
-  are welcome :)
+When proposing a feature:
+* Explain how it would work in detail.
+* Keep the scope narrow for easier implementation.
+* Remember that contributions are welcome and this is a volunteer-driven project.
 
 ## Get Started!
 
 Ready to contribute? Here's how to set up `dsci_524_ezplot` for local development.
 
-1. Download a copy of `dsci_524_ezplot` locally.
-2. Install `dsci_524_ezplot` using `poetry`:
+1. **Fork the repository**  
+   Start by forking the `dsci_524_ezplot` repository to your GitHub account.
 
+2. **Clone the repository**  
+   Clone the forked repository to your local machine:
+   ```console
+   $ git clone https://github.com/<your-username>/dsci_524_ezplot.git
+
+3. **Navigate to the project directory**
+    Move into the project directory:
     ```console
+    $ cd dsci_524_ezplot
+    ```
+
+4. **Install dependecies**
+    Use `poetry` to install all dependecies:
+     ```console
     $ poetry install
     ```
 
-3. Use `git` (or similar) to create a branch for local development and make your changes:
-
-    ```console
+5. **Create a branch for your changes**
+    Use `git` (or similar) to create a branch for local dvelopment:
+     ```console
     $ git checkout -b name-of-your-bugfix-or-feature
     ```
 
-4. When you're done making changes, check that your changes conform to any code formatting requirements and pass any tests.
+6. **Keep your branch up-to-date**
+    Regulary pull updates from `main` branch to stay synced:
+    ```console
+    $ git pull origin main
+    ```
+7. **Make and test your changes**
+    Implement your changes locally and test to ensure they work as expected.
 
-5. Commit your changes and open a pull request.
+8. **Commit your changes**
+    Write clear, meaningful commit messages:
+     ```console
+    $ git commit -m "Add a meaningful message describing your changes"
+    ```
+9. **Push your changes to Github**
+    Push your branch to your forked repository:
+     ```console
+    $ git push origin name-of-your-branch
+    ```
+10. **Open a pull request**
+    Open a pull request to the main repository, linking it to the relevant issue and following the [Pull Request Guidelines](#pull-request-guidelines).
 
 ## Pull Request Guidelines
 
@@ -66,6 +112,7 @@ Before you submit a pull request, check that it meets these guidelines:
 1. The pull request should include additional tests if appropriate.
 2. If the pull request adds functionality, the docs should be updated.
 3. The pull request should work for all currently supported operating systems and versions of Python.
+4. Assign reviewers to your pull request and address their feedback before merging. 
 
 ## Code of Conduct
 
