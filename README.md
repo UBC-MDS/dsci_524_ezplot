@@ -1,6 +1,6 @@
 # dsci_524_ezplot
 
-A Python package for enhanced data visualization
+ezplot is a Python package designed to simplify data visualization for data scientists and analysts. This package generates commonly used plots easily and quickly, allowing users to focus on insights rather than coding. The package provides robust and user-friendly functions for creating line plots, scatter plots, histograms, and heatmaps, making it a perfect tool for quick and effective data exploration and presentation.
 
 ## Installation
 
@@ -10,7 +10,19 @@ $ pip install dsci_524_ezplot
 
 ## Usage
 
-- TODO
+- plot_line(): This function generates line plots, ideal for visualizing trends and changes over time in your dataset. It provides customizable options for styling lines, markers, and axis labels.
+
+- plot_scatterplot(): Use this function to create scatter plots that help analyze relationships between two continuous variables. Options for point size, color, and transparency are included.
+
+- plot_histogram(): Quickly create histograms to understand the distribution of a single variable. The function includes bin size adjustments and styling options.
+
+- plot_heatmap(): This function creates heatmaps to visualize correlations or matrix-like data. It includes customizable color palettes and annotations for better interpretability.
+
+- dsci_524_ezplot.py: The main script of the package, serving as an entry point for importing and using all the available functions seamlessly.
+
+## Where This Package Fits in the Python Ecosystem
+
+The Python ecosystem already offers powerful visualization libraries like Matplotlib, Seaborn, and Plotly. However, these libraries often require significant boilerplate code to customize and generate specific plots. ezplot aims to bridge the gap between flexibility and simplicity by providing pre-built functions tailored for common visualization needs. While Seaborn and Matplotlib offer extensive functionality, ezplot is designed to be lightweight and accessible for users who need straightforward plotting tools without diving into extensive customization.
 
 ## Contributing
 
