@@ -10,13 +10,13 @@ $ pip install dsci_524_ezplot
 
 ## Usage
 
-- plot_line(): This function generates line plots, ideal for visualizing trends and changes over time in your dataset. It provides customizable options for styling lines, markers, and axis labels.
+- plot_line(): This function generates line plots, ideal for visualizing trends and changes over time in your dataset.
 
-- plot_scatterplot(): Use this function to create scatter plots that help analyze relationships between two continuous variables. Options for point size, color, and transparency are included.
+- plot_scatterplot(): Use this function to create scatter plots that help analyze relationships between two continuous variables. Options for color is included.
 
-- plot_histogram(): Quickly create histograms to understand the distribution of a single variable. The function includes bin size adjustments and styling options.
+- plot_histogram(): Quickly create histograms to understand the distribution of a single variable. The function includes bin size adjustments options.
 
-- plot_heatmap(): This function creates heatmaps to visualize correlations or matrix-like data. It includes customizable color palettes and annotations for better interpretability.
+- plot_heatmap(): This function creates heatmaps to visualize correlations or matrix-like data. It includes customizable color palettes for better interpretability.
 
 - dsci_524_ezplot.py: The main script of the package, serving as an entry point for importing and using all the available functions seamlessly.
 
