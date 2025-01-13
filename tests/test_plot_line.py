@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def test_plot_line():
     """Test plot_line function."""
     df = pd.DataFrame({'year': [2020, 2021, 2022], 'sales': [100, 150, 200]})
-    fig, ax = plot_line(df, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
+    fig, ax = plot_line(df, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)', x_decimals=0, y_decimals=2)
     
     # Existence checks
     assert fig is not None, "Figure is None!"
@@ -19,3 +19,10 @@ def test_plot_line():
     # Data checks
     line = ax.get_lines()[0]
     assert len(line.get_xdata()) == 3, "Incorrect number of data points"
+
+    # Decimals checks
+    x_formatter = ax.xaxis.get_major_formatter()
+    y_formatter = ax.yaxis.get_major_formatter()
+    assert x_formatter.format_data(2020) == '2020', "X-axis decimals are incorrect"
+    assert y_formatter.format_data(100) == '100.00', "Y-axis decimals are incorrect"
+    plt.close(fig)
