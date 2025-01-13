@@ -10,6 +10,13 @@ def test_plot_line():
     # Existence checks
     assert fig is not None, "Figure is None!"
     assert ax is not None, "Axes is None!"
+
+    # Minimum data points check
+    df_single = pd.DataFrame({'year': [2020], 'sales': [100]})
+    try:
+        plot_line(df_single, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
+    except ValueError as e:
+        assert str(e) == "At least 2 data points are required to plot a line", "Incorrect error message"
     
     # Legends checks
     assert ax.get_title() == 'Annual Sales', "Title is incorrect"
