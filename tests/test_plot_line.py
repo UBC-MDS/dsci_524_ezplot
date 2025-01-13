@@ -17,6 +17,20 @@ def test_plot_line():
         plot_line(df_single, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
     except ValueError as e:
         assert str(e) == "At least 2 data points are required to plot a line", "Incorrect error message"
+
+    # Non-numeric data check
+    df_non_numeric = pd.DataFrame({'year': ['2020', '2021', '2022'], 'sales': [100, 150, 200]})
+    try:
+        plot_line(df_non_numeric, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
+    except ValueError as e:
+        assert str(e) == "Both x and y must be numeric", "Incorrect error message for non-numeric data"
+
+    # Missing values check
+    df_missing = pd.DataFrame({'year': [2020, 2021, 2022], 'sales': [100, None, 200]})
+    try:
+        plot_line(df_missing, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
+    except ValueError as e:
+        assert str(e) == "Data contains missing values", "Incorrect error message for missing values"
     
     # Legends checks
     assert ax.get_title() == 'Annual Sales', "Title is incorrect"
@@ -26,6 +40,7 @@ def test_plot_line():
     # Data checks
     line = ax.get_lines()[0]
     assert len(line.get_xdata()) == 3, "Incorrect number of data points"
+    assert len(line.get_ydata()) == 3, "Incorrect number of data points"
 
     # Decimals checks
     x_formatter = ax.xaxis.get_major_formatter()
