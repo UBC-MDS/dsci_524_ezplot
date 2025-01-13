@@ -13,7 +13,7 @@ def plot_line(df, x, y, title=None, xlabel=None, ylabel=None, x_decimals=None, y
         Column name for x-axis values
     y : str
         Column name for y-axis values
-    title : str
+    title : str, optional
         Title of the plot (default: None)
     xlabel : str, optional
         Label for x-axis (default: x column name)
