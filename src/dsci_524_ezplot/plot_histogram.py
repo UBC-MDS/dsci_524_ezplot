@@ -39,6 +39,7 @@ def plot_histogram(df, column=None, bins=10, title=None, xlabel=None, ylabel=Non
         If input data is not a DataFrame or a NumPy array.
     ValueError
         If the data is empty or contains all NaN values.
+        If `bins` is not a positive integer.
     """
 
     # Validate input type
@@ -50,6 +51,10 @@ def plot_histogram(df, column=None, bins=10, title=None, xlabel=None, ylabel=Non
         raise ValueError("DataFrame must not be empty.")
     if isinstance(df, np.ndarray) and df.size == 0:
         raise ValueError("NumPy array must not be empty.")
+    
+    # Validate bins
+    if not isinstance(bins, int) or bins <= 0:
+        raise ValueError("`bins` must be a positive integer.")
 
     # If the input is a DataFrame and remove NaN values
     if isinstance(df, pd.DataFrame):
@@ -66,7 +71,7 @@ def plot_histogram(df, column=None, bins=10, title=None, xlabel=None, ylabel=Non
         data = data[~np.isnan(data)]
 
     # Check if the data is categorical
-    if pd.api.types.is_categorical_dtype(data) or isinstance(data[0], (str, bool)):
+    if isinstance(data.dtype, pd.CategoricalDtype) or isinstance(data[0], (str, bool)):
         # Create a bar plot for categorical data
         unique_values, counts = np.unique(data, return_counts=True)
         fig, ax = plt.subplots()
