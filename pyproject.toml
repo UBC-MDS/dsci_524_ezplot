@@ -10,6 +10,7 @@ readme = "README.md"
 python = ">=3.11"
 matplotlib = ">=3.10.0"
 pandas = ">=2.2.3"
+seaborn = "^0.13.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
