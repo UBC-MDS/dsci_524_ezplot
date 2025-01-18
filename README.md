@@ -4,21 +4,40 @@ ezplot is a Python package designed to simplify data visualization for data scie
 
 ## Installation
 
+You can install the package directly from GitHub:
+
 ```bash
-$ pip install dsci_524_ezplot
+pip install git+https://github.com/UBC-MDS/dsci_524_ezplot.git
 ```
 
 ## Usage
 
-- plot_line(): This function generates line plots, ideal for visualizing trends and changes over time in your dataset.
+The **ezplot** package provides the following functions:
 
-- plot_scatterplot(): Use this function to create scatter plots that help analyze relationships between two continuous variables. Options for color is included.
+- **`plot_line()`**: Generates line plots for visualizing trends and changes over time in your dataset.
+- **`plot_scatterplot()`**: Creates scatter plots to analyze relationships between two continuous variables, with optional color and size adjustments.
+- **`plot_histogram()`**: Quickly creates histograms to understand the distribution of a single variable, including options to adjust bin size.
+- **`plot_heatmap()`**: Creates heatmaps to visualize correlations or matrix-like data, with customizable color palettes for better interpretability.
 
-- plot_histogram(): Quickly create histograms to understand the distribution of a single variable. The function includes bin size adjustments options.
+### Example
 
-- plot_heatmap(): This function creates heatmaps to visualize correlations or matrix-like data. It includes customizable color palettes for better interpretability.
+Here’s how you can create a heatmap using **ezplot**:
 
-- dsci_524_ezplot.py: The main script of the package, serving as an entry point for importing and using all the available functions seamlessly.
+```python
+from dsci_524_ezplot.plot_heatmap import plot_heatmap
+import pandas as pd
+import numpy as np
+
+# Create sample data
+data = pd.DataFrame(np.random.rand(5, 5), columns=["A", "B", "C", "D", "E"])
+
+# Generate a heatmap
+fig, ax = plot_heatmap(data, title="Sample Heatmap", xlabel="Columns", ylabel="Rows")
+
+# Display the plot
+import matplotlib.pyplot as plt
+plt.show()
+```
 
 ## Where This Package Fits in the Python Ecosystem
 
