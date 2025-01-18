@@ -18,6 +18,13 @@ def test_plot_line():
     except ValueError as e:
         assert str(e) == "At least 2 data points are required to plot a line", "Incorrect error message"
 
+    # Empty dataframe check
+    df_empty = pd.DataFrame({'year': [], 'sales': []})
+    try:
+        plot_line(df_empty, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
+    except ValueError as e:
+        assert str(e) == "At least 2 data points are required to plot a line", "Incorrect error message for empty dataframe"
+
     # Non-numeric data check
     df_non_numeric = pd.DataFrame({'year': ['2020', '2021', '2022'], 'sales': [100, 150, 200]})
     try:
@@ -31,6 +38,26 @@ def test_plot_line():
         plot_line(df_missing, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
     except ValueError as e:
         assert str(e) == "Data contains missing values", "Incorrect error message for missing values"
+
+    # Negative values check
+    df_negative_x = pd.DataFrame({'year': [-2020, 2021], 'sales': [100, 150]})
+    try:
+        plot_line(df_negative_x, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
+    except ValueError as e:
+        assert str(e) == "All values in year must be non-negative", "Incorrect error message for negative x values"
+
+    df_negative_y = pd.DataFrame({'year': [2020, 2021], 'sales': [-100, 150]})
+    try:
+        plot_line(df_negative_y, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
+    except ValueError as e:
+        assert str(e) == "All values in sales must be non-negative", "Incorrect error message for negative y values"
+
+    # Infinity values check
+    df_inf = pd.DataFrame({'year': [2020, 2021], 'sales': [100, float('inf')]})
+    try:
+        plot_line(df_inf, 'year', 'sales', 'Annual Sales', 'Year', 'Sales ($)')
+    except ValueError as e:
+        assert str(e) == "Data contains invalid values (infinity)", "Incorrect error message for infinity values"
     
     # Legends checks
     assert ax.get_title() == 'Annual Sales', "Title is incorrect"

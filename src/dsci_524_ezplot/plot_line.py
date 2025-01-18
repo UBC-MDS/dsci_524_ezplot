@@ -39,26 +39,38 @@ def plot_line(df, x, y, title=None, xlabel=None, ylabel=None, x_decimals=None, y
     >>> fig, ax = plot_line(df, 'year', 'sales', 'Annual Sales', 'Year', 'Sales',
     ...                     x_decimals=0, y_decimals=2)
     """
+    # Data validation
+    if len(df) < 2:
+        raise ValueError("At least 2 data points are required to plot a line")
+
+    if df[x].isna().any() or df[y].isna().any():
+        raise ValueError("Data contains missing values")
+        
+    if not (pd.api.types.is_numeric_dtype(df[x]) and pd.api.types.is_numeric_dtype(df[y])):
+        raise ValueError("Both x and y must be numeric")
+
+    if df[x].isin([float('inf'), float('-inf')]).any() or df[y].isin([float('inf'), float('-inf')]).any():
+        raise ValueError("Data contains invalid values (infinity)")
+        
+    if (df[x] < 0).any():
+        raise ValueError(f"All values in {x} must be non-negative")
+        
+    if (df[y] < 0).any():
+        raise ValueError(f"All values in {y} must be non-negative")
+
+    # Create plot
     fig, ax = plt.subplots()
     ax.plot(df[x], df[y])
-
-    # Format x-axis decimals
-    if x_decimals is not None:
-        ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f'{x:.{x_decimals}f}'))
     
-    # Format y-axis decimals
-    if y_decimals is not None:
-        ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, p: f'{y:.{y_decimals}f}'))
-
-    # Set default labels to column names if not provided
-    if xlabel is None:
-        xlabel = x
-    if ylabel is None:
-        ylabel = y
-
+    # Set labels and title
     ax.set_title(title)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
-
-    ax.grid(True, linestyle='--', alpha=0.3)
+    
+    # Set decimal formatting
+    if x_decimals is not None:
+        ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f"{x:.{x_decimals}f}"))
+    if y_decimals is not None:
+        ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: f"{x:.{y_decimals}f}"))
+    
     return fig, ax
