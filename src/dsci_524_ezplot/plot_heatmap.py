@@ -3,7 +3,7 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-def plot_heatmap(df, title, cmap="viridis", xlabel=None, ylabel=None):
+def plot_heatmap(df, title=None, cmap="viridis", xlabel=None, ylabel=None):
     """
     Create a heatmap using data from a pandas DataFrame or a 2D array.
 
@@ -29,6 +29,13 @@ def plot_heatmap(df, title, cmap="viridis", xlabel=None, ylabel=None):
         - matplotlib.axes.Axes
             The axes object containing the heatmap elements.
 
+    Raises
+    ------
+    TypeError
+        If the input data contains non-numeric values.
+    ValueError
+        If the input data is empty.
+
     Examples
     --------
     >>> import pandas as pd
@@ -45,6 +52,14 @@ def plot_heatmap(df, title, cmap="viridis", xlabel=None, ylabel=None):
         raise ValueError("DataFrame must not be empty.")
     if isinstance(df, np.ndarray) and df.size == 0:
         raise ValueError("NumPy array must not be empty.")
+    
+    # Ensure data is numeric
+    if isinstance(df, pd.DataFrame):
+        if not all(pd.api.types.is_numeric_dtype(dtype) for dtype in df.dtypes):
+            raise TypeError("All columns in the DataFrame must contain numeric data.")
+    elif isinstance(df, np.ndarray):
+        if not np.issubdtype(df.dtype, np.number):
+            raise TypeError("NumPy array must contain numeric data.")
     
     # Handle NaN values
     if isinstance(df, pd.DataFrame) and df.isnull().values.any():
