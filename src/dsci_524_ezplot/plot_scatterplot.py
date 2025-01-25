@@ -79,11 +79,17 @@ def plot_scatterplot(df, x, y, color=None, title=None, xlabel=None, ylabel=None)
     # Create scatterplot with matplotlib
     fig, ax = plt.subplots()
 
-    # If color is inputted
     if color is not None:
-        plot = ax.scatter(df[x], df[y], c = pd.Categorical(df[color]).codes, cmap='viridis')
+        # Check if the color column is categorical or continuous
+        if isinstance(df[color].dtype, pd.CategoricalDtype) or df[color].dtype == object:
+            # Create the scatter plot with categorical color
+            categories = pd.Categorical(df[color])
+            scatter = ax.scatter(df[x], df[y], c=categories.codes, cmap='viridis')
+            ax.legend(handles=scatter.legend_elements()[0], labels=list(categories.categories), title=color)
+        else:
+            scatter = ax.scatter(df[x], df[y], c=df[color], cmap='viridis')
     else:
-        plot = ax.scatter(df[x], df[y])
+        scatter = ax.scatter(df[x], df[y])
 
     ax.set_title(title or '')
     ax.set_xlabel(xlabel or '')
