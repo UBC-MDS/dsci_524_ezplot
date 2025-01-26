@@ -1,5 +1,7 @@
 # dsci_524_ezplot
 
+[![Documentation Status](https://readthedocs.org/projects/dsci-524-ezplot/badge/?version=latest)](https://readthedocs.org/projects/dsci-524-ezplot/badge/?version=latest))
+
 ezplot is a Python package designed to simplify data visualization for data scientists and analysts. This package generates commonly used plots easily and quickly, allowing users to focus on insights rather than coding. The package provides robust and user-friendly functions for creating line plots, scatter plots, histograms, and heatmaps, making it a perfect tool for quick and effective data exploration and presentation.
 
 ## Installation
