@@ -4,10 +4,10 @@ ezplot is a Python package designed to simplify data visualization for data scie
 
 ## Installation
 
-You can install the package directly from GitHub:
+You can install the package directly from PyPi:
 
 ```bash
-pip install git+https://github.com/UBC-MDS/dsci_524_ezplot.git
+pip install dsci_524_ezplot
 ```
 
 ## Usage
