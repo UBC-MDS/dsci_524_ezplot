@@ -1,14 +1,10 @@
 # dsci_524_ezplot
 
-![Python Versions](https://img.shields.io/pypi/pyversions/dsci_524_ezplot)
-
-![CI-CD](https://github.com/UBC-MDS/dsci_524_ezplot/actions/workflows/ci-cd.yml/badge.svg)
-
-[![Documentation Status](https://readthedocs.org/projects/dsci-524-ezplot/badge/?version=latest)](https://dsci-524-ezplot.readthedocs.io/en/latest/?badge=latest)
-
-[![codecov](https://codecov.io/github/UBC-MDS/dsci_524_ezplot/graph/badge.svg?token=bVVFkdjNRG)](https://codecov.io/github/UBC-MDS/dsci_524_ezplot)
-
 [![Project Status](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+![Python Versions](https://img.shields.io/pypi/pyversions/dsci_524_ezplot)
+[![Documentation Status](https://readthedocs.org/projects/dsci-524-ezplot/badge/?version=latest)](https://dsci-524-ezplot.readthedocs.io/en/latest/?badge=latest)
+![CI-CD](https://github.com/UBC-MDS/dsci_524_ezplot/actions/workflows/ci-cd.yml/badge.svg)
+[![codecov](https://codecov.io/github/UBC-MDS/dsci_524_ezplot/graph/badge.svg?token=bVVFkdjNRG)](https://codecov.io/github/UBC-MDS/dsci_524_ezplot)
 
 Documentation Link: https://dsci-524-ezplot.readthedocs.io/en/latest/
 
