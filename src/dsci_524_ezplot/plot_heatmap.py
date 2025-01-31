@@ -50,7 +50,7 @@ def plot_heatmap(data, title=None, cmap="viridis", xlabel=None, ylabel=None):
     """
     # Validate input type
     if not isinstance(data, (pd.DataFrame, np.ndarray)):
-        raise TypeError("Input data must be a pandas DataFrame or a NumPy array.")
+        raise TypeError("Input data must be a pandas DataFrame or a numpy array.")
     
     # Handle empty data
     if isinstance(data, pd.DataFrame) and data.empty:
