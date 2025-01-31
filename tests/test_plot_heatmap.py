@@ -168,3 +168,24 @@ def test_plot_heatmap_custom_labels(rng):
     assert ax.get_xlabel() == "Custom X", "The x-axis label should match the input."
     assert ax.get_ylabel() == "Custom Y", "The y-axis label should match the input."
     plt.close(fig)  # Clean up the figure
+
+# Test for Valid NumPy Array Input
+def test_plot_heatmap_valid_numpy_array():
+    """
+    Test if plot_heatmap works with a valid NumPy array.
+    Ensures that numeric NumPy arrays are accepted as input.
+    """
+    arr = np.random.rand(5, 5)  # Generate a random numeric NumPy array
+    fig, ax = plot_heatmap(arr, title="Valid NumPy Array Test")  # Generate heatmap
+    assert fig is not None, "The heatmap should render for a valid NumPy array."
+    plt.close(fig)  # Clean up the figure
+
+# Test for Non-Numeric NumPy Array
+def test_plot_heatmap_invalid_numpy_array():
+    """
+    Test if plot_heatmap raises a TypeError for non-numeric NumPy arrays.
+    Ensures that only numeric data is accepted in NumPy arrays.
+    """
+    arr = np.array([["a", "b"], ["c", "d"]])  # Non-numeric NumPy array
+    with pytest.raises(TypeError, match="NumPy array must contain numeric data."):
+        plot_heatmap(arr)
