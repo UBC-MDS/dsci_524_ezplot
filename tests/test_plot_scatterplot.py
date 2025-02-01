@@ -91,6 +91,33 @@ def test_non_numeric_data():
     with pytest.raises(TypeError):
         plot_scatterplot(data, x = 'x', y = 'y')
 
+# Edge Case 6
+def test_non_numeric_y_column():
+    """Test that a TypeError is raised when the y column contains non-numeric data."""
+    df = pd.DataFrame({
+        'x': [1, 2, 3, 4],
+        'y': ['a', 'b', 'c', 'd'], 
+        'color': [10, 20, 30, 40]
+    })
+    with pytest.raises(TypeError):
+        plot_scatterplot(df, x='x', y='y')
+
+# Edge Case 7
+def test_numeric_color_column():
+    """Test that scatter plot uses a colormap when the color column is numeric."""
+    df = pd.DataFrame({
+        'x': [1, 2, 3, 4],
+        'y': [10, 20, 30, 40],
+        'color': [100, 200, 300, 400]  # Numeric color column
+    })
+    
+    fig, ax = plot_scatterplot(df, x='x', y='y', color='color')
+
+    # Verify that a colormap is applied
+    scatter = ax.collections[0]
+    assert scatter.get_array() is not None, "Colormap is not applied when color is numeric."
+
+
 # Error Case 1
 def test_plot_scatterplot_invalid_input_type():
     """Test if plot_scatterplot raises a TypeError for invalid input types."""
@@ -110,4 +137,5 @@ def test_plot_scatterplot_empty_numpy_array():
     empty_array = np.array([])  # Create an empty NumPy array
     with pytest.raises(ValueError):
         plot_scatterplot(empty_array, x=0, y=1, title="Test Plot Empty NumPy Array")
+
 
