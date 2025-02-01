@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.0.4 (2025-02-01)
+
+### Bug Fixes
+
+- Feedback addressed by Stephanie-Ta to add test empty numpy array
+  ([`6b32cc2`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/6b32cc230b6eec6675b0b9470ac40aae7b073edb))
+
+
 ## v0.0.3 (2025-02-01)
 
 ### Bug Fixes
