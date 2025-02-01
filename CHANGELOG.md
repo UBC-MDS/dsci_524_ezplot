@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.0.2 (2025-02-01)
+
+### Bug Fixes
+
+- Address feedback by psingh238 to fix import structure
+  ([`49b316d`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/49b316d15844aff7573a4aa26f5ebc5fff9d7fbd))
+
+
 ## v0.0.1 (2025-01-31)
 
 ### Bug Fixes
