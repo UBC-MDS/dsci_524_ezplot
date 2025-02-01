@@ -92,6 +92,17 @@ def test_mixed_data_types():
     assert ax is not None, "Axes were not created."
     plt.close(fig)
 
+# Edge Case 7
+def test_flatten_and_nan_removal():
+    """Test flattening and removing NaN values from a NumPy array."""
+    arr = np.array([[1, np.nan, 2], [np.nan, 3, 4]])
+    fig, ax = plot_histogram(arr, bins=2, title="Flatten and NaN Removal")
+    data = arr.flatten()[~np.isnan(arr.flatten())]  # Simulate flattening and NaN removal
+    assert np.array_equal(data, np.array([1, 2, 3, 4])), "Flattening or NaN removal failed."
+    assert fig is not None
+    assert ax is not None
+    plt.close(fig)
+
 # Error Case 1
 def test_empty_dataframe():
     """Test error for empty DataFrame."""
@@ -133,6 +144,13 @@ def test_no_column_specified_with_nonnumeric_data():
     df = pd.DataFrame({'color': ['red', 'blue', 'green']})
     with pytest.raises(ValueError, match="No numeric columns found in the DataFrame."):
         plot_histogram(df)
+
+# Error Case 7
+def test_invalid_input_type():
+    """Test error for invalid input type."""
+    invalid_input = "not_a_dataframe_or_array"
+    with pytest.raises(TypeError, match="Input data must be a pandas DataFrame or a NumPy array."):
+        plot_histogram(invalid_input)
 
 if __name__ == "__main__":
     pytest.main()
