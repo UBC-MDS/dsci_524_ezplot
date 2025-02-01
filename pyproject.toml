@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dsci_524_ezplot"
-version = "0.0.5"
+version = "0.0.6"
 description = "A Python package for enhanced data visualization"
 authors = ["Daduica Julian, Elshaday Yoseph, Henry(Mu) Ha, Zhou Yining"]
 license = "MIT"

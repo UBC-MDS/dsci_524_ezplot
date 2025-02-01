@@ -1,6 +1,25 @@
 # CHANGELOG
 
 
+## v0.0.6 (2025-02-01)
+
+### Bug Fixes
+
+- Feedback addressed by adding a docstring example to plot_histogram (peer suggestion)
+  ([`0c76707`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/0c7670735ff29f84fe096e8f5391cf949bc1f88f))
+
+- Feedback addressed by adding test cases for full coverage (TA and peer suggestion)
+  ([`4b1feb3`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/4b1feb397788deba5e145ab0188b98948d29fc12))
+
+- Feedback addressed by improving test_plot_histogram documentation (TA suggestion)
+  ([`e07b2c9`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/e07b2c98fc6befa32e6238f8bbb3a3b7179fd14b))
+
+### Documentation
+
+- Improve README formatting for better code clarity
+  ([`8736d73`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/8736d7370dcf81ff35f805d26627daedfaa6c5c2))
+
+
 ## v0.0.5 (2025-02-01)
 
 
