@@ -1,4 +1,8 @@
 
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
 def plot_scatterplot(df, x, y, color=None, title=None, xlabel=None, ylabel=None):
     """
     Create a scatter plot from the provided dataset or Array.
@@ -48,10 +52,6 @@ def plot_scatterplot(df, x, y, color=None, title=None, xlabel=None, ylabel=None)
     ...                            xlabel='Height (cm)', ylabel='Weight (kg)')
     """
     
-    import matplotlib.pyplot as plt
-    import pandas as pd
-    import numpy as np
-
     # Validate input data type
     if not isinstance(df, (pd.DataFrame, np.ndarray)):
         raise TypeError("Input data must be a pandas DataFrame or a NumPy array.")

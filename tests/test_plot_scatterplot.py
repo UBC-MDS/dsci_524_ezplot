@@ -139,7 +139,3 @@ def test_plot_scatterplot_empty_numpy_array():
         plot_scatterplot(empty_array, x=0, y=1, title="Test Plot Empty NumPy Array")
 
 
-
-
-
-    

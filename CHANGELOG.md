@@ -1,6 +1,30 @@
 # CHANGELOG
 
 
+## v0.0.4 (2025-02-01)
+
+### Bug Fixes
+
+- Feedback addressed by Stephanie-Ta to add test empty numpy array
+  ([`6b32cc2`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/6b32cc230b6eec6675b0b9470ac40aae7b073edb))
+
+
+## v0.0.3 (2025-02-01)
+
+### Bug Fixes
+
+- Add table overflow handling for wide tables in ReadTheDocs
+  ([`d9fc9f4`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/d9fc9f4cc2ccb3d87f0b482b469afa54add47e25))
+
+
+## v0.0.2 (2025-02-01)
+
+### Bug Fixes
+
+- Address feedback by psingh238 to fix import structure
+  ([`49b316d`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/49b316d15844aff7573a4aa26f5ebc5fff9d7fbd))
+
+
 ## v0.0.1 (2025-01-31)
 
 ### Bug Fixes
