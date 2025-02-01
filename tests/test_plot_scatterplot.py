@@ -103,3 +103,11 @@ def test_plot_scatterplot_empty_dataframe():
     df = pd.DataFrame(columns=[])  # Create empty DataFrame
     with pytest.raises(ValueError):
         plot_scatterplot(df, x = 0, y = 1, title = "Test Plot Empty DF")
+
+# Error Case 3
+def test_plot_scatterplot_empty_numpy_array():
+    """Test if plot_scatterplot raises a ValueError for an empty NumPy array."""
+    empty_array = np.array([])  # Create an empty NumPy array
+    with pytest.raises(ValueError):
+        plot_scatterplot(empty_array, x=0, y=1, title="Test Plot Empty NumPy Array")
+
