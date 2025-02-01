@@ -40,6 +40,18 @@ def plot_histogram(df, column=None, bins=10, title=None, xlabel=None, ylabel=Non
     ValueError
         If the data is empty or contains all NaN values.
         If `bins` is not a positive integer.
+
+    Examples
+    --------
+    Using a pandas DataFrame:
+    >>> import pandas as pd
+    >>> import numpy as np
+    >>> df = pd.DataFrame({'values': np.random.randn(100)})
+    >>> fig, ax = plot_histogram(df, column='values', bins=20, title="Histogram of Values", xlabel="Values", ylabel="Frequency")
+
+    Using a NumPy array:
+    >>> arr = np.random.randn(100)
+    >>> fig, ax = plot_histogram(arr, bins=15, title="Histogram from NumPy Array", xlabel="Values", ylabel="Frequency")
     """
 
     # Validate input type
