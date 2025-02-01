@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.0.3 (2025-02-01)
+
+### Bug Fixes
+
+- Add table overflow handling for wide tables in ReadTheDocs
+  ([`d9fc9f4`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/d9fc9f4cc2ccb3d87f0b482b469afa54add47e25))
+
+
 ## v0.0.2 (2025-02-01)
 
 ### Bug Fixes
