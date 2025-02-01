@@ -1,6 +1,9 @@
 # CHANGELOG
 
 
+## v0.0.5 (2025-02-01)
+
+
 ## v0.0.4 (2025-02-01)
 
 ### Bug Fixes
@@ -20,6 +23,9 @@
 ## v0.0.2 (2025-02-01)
 
 ### Bug Fixes
+
+- Address feedback by cherylziunzhao to obtain 100% coverage in function
+  ([`a3bdb37`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/a3bdb3743d78ba35728461763b78acbc834e36a0))
 
 - Address feedback by psingh238 to fix import structure
   ([`49b316d`](https://github.com/UBC-MDS/dsci_524_ezplot/commit/49b316d15844aff7573a4aa26f5ebc5fff9d7fbd))
