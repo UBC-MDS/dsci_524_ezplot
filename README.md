@@ -49,11 +49,11 @@ plt.show()
 
 ## Where This Package Fits in the Python Ecosystem
 
-The Python ecosystem already offers powerful visualization libraries like Matplotlib, Seaborn, and Plotly. However, these libraries often require significant boilerplate code to customize and generate specific plots. ezplot aims to bridge the gap between flexibility and simplicity by providing pre-built functions tailored for common visualization needs. While Seaborn and Matplotlib offer extensive functionality; ezplot is designed to be lightweight and accessible for users who need straightforward plotting tools without diving into extensive customization.
+The Python ecosystem already offers powerful visualization libraries like `Matplotlib`, `Seaborn`, and `Plotly`. However, these libraries often require significant boilerplate code to customize and generate specific plots. `ezplot` aims to bridge the gap between flexibility and simplicity by providing pre-built functions tailored for common visualization needs. While `Seaborn` and `Matplotlib` offer extensive functionality; `ezplot` is designed to be lightweight and accessible for users who need straightforward plotting tools without diving into extensive customization.
 
 ## Contributing
 
-Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
+Interested in contributing? Check out the [CONTRIBUTING.md](https://github.com/UBC-MDS/dsci_524_ezplot/blob/main/CONTRIBUTING.md) guidelines. Please note that this project is released with a [Code of Conduct](https://github.com/UBC-MDS/dsci_524_ezplot/blob/main/CONDUCT.md). By contributing to this project, you agree to abide by its terms.
 
 ## License
 
